@@ -1,0 +1,11 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script src="config.js"></script><script src="app.js"></script><title>Demo Bank – kredyt gotówkowy</title></head><body><header><b>Demo Bank</b><nav><a href="index.html">Start</a><a href="kredyt.html">Kredyt gotówkowy</a><a href="konto.html">Konto osobiste</a><a href="tel:+48221234567">☎ 22 123 45 67</a><button id="login">Zaloguj</button></nav></header>
+<main><h1>Kredyt gotówkowy</h1>
+<div class="card"><h2>Kalkulator</h2>
+<label>Kwota: <input id="amount" type="range" min="5000" max="200000" step="5000" value="30000"></label>
+<label>Okres: <select id="months"><option>12</option><option selected>24</option><option>48</option><option>72</option></select> mies.</label>
+<button id="calc" type="button">Oblicz ratę</button> <b id="rata"></b></div>
+<div class="card"><h2>Wniosek</h2><form id="loan">
+<div class="step"><p>Krok 1: cel kredytu</p><select><option>Remont</option><option>Samochód</option><option>Konsolidacja</option></select><button type="button" class="next">Dalej</button></div>
+<div class="step"><p>Krok 2: dane kontaktowe</p><input placeholder="Imię"><input placeholder="Telefon"><button type="button" class="next">Dalej</button></div>
+<div class="step"><p>Krok 3: zgody</p><label><input type="checkbox" style="width:auto"> Zgoda na kontakt</label><button type="submit">Wyślij wniosek</button></div>
+</form></div></main></body></html>
