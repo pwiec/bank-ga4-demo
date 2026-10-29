@@ -1,0 +1,22 @@
+name: traffic
+on:
+  schedule:
+    - cron: '0 7,13,19 * * *'
+  workflow_dispatch:
+    inputs:
+      sessions:
+        description: Liczba sesji
+        default: '40'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright && playwright install --with-deps chromium
+      - run: python generate.py
+        env:
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          SESSIONS: ${{ inputs.sessions || '40' }}
